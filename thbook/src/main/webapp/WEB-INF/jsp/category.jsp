@@ -17,7 +17,7 @@
 
         <jsp:include page="include/menu.jsp"/>
 
-        <div class="row pt-3">
+        <div class="row pt-3 mt-2">
             <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">

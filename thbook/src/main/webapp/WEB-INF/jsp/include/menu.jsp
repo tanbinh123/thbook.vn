@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="menutren">
-    <nav class="navbar navbar-dark bg-success">
+    <nav class="navbar navbar-dark bg-success navbar-fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/thbook">THBOOK</a>
             <button class="navbar-toggler hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">

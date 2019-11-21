@@ -16,7 +16,7 @@
             <div id="fb-root"></div>
 
         <jsp:include page="include/menu.jsp"/>
-        <div class="phanhai">
+        <div class="phanhai mt-2">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-7">
@@ -26,7 +26,7 @@
                             <div class="container"> 
                                 <c:if test="${sessionScope.order != null}" >
                                     <form method="POST" action="/thbook/updateBookOnCart/">
-                                        <h3>Thông tin đơn hàng</h3>
+                                        <h3 style="margin-left: 20px;">Thông tin đơn hàng</h3>
                                         <br>
                                         <table id="cart" class="table table-hover table-condensed"> 
                                             <thead> 
@@ -54,7 +54,7 @@
                                                             <fmt:formatNumber type = "number" maxFractionDigits  = "3" value = "${orderDetail.product.price}" /> đ
                                                         </td> 
                                                         <td data-th="Quantity">
-                                                            <input class=" text-center" name="quantity" value="${orderDetail.quantity}" type="number">
+                                                            <input class=" text-center" name="quantity" value="${orderDetail.quantity}" type="number" style="width: 50px;">
                                                         </td> 
                                                         <td data-th="Subtotal" class="text-center"> 
                                                             <fmt:formatNumber type = "number" maxFractionDigits  = "3" value = "${orderDetail.total}" /> đ
@@ -94,7 +94,7 @@
                         <form action="/thbook/checkout/" method="POST">
                             <br>
                             <br>
-                            <h3>Thông tin thanh toán</h3>
+                            <h3 style="margin-left: 20px;">Thông tin thanh toán</h3>
                             <br>
                             <table border="0" class="table">
                                 <thead>

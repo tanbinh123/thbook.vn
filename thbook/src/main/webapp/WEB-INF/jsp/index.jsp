@@ -16,7 +16,7 @@
         <jsp:include page="include/menu.jsp" />
    
                                 
-         <div  class="phan2 pt-3">
+         <div  class="phan2 pt-3 mt-2">
             <div class="container">
             <div class="row">
             <div class="col-12 col-sm-4">

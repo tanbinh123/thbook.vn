@@ -63,12 +63,12 @@ Tuyển dụng</p>
     </div>
 </div>
 <div class="footer mt-2">
+                   <p style="margin-top: 20px; padding-right: 15px;" class="float-xs-right"><a href="#" class="lentren"><i class="fa fa-arrow-up" aria-hidden="true">TOP</i></a></p>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <p class="float-xs-right"><a href="#" class="lentren"><i class="fa fa-arrow-up" aria-hidden="true">TOP</i>
-</a></p>
-                <p>Nhà sách THBOOK - Bản quyền © 2019</p>
+ 
+                <p style="margin-top: 15px;">Nhà sách THBOOK - Bản quyền © 2019</p>
             </div>
         </div>
     </div>
