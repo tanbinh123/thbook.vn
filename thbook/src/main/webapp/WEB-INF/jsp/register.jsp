@@ -27,98 +27,118 @@
 
 
         </head>
-        <body class="hold-transition register-page">
-            <div class="register-box">
-                <div class="register-logo">
-                    <a href="../../index2.html"><b>Admin</b>LTE</a>
-                </div>
+        <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
 
-                <div class="card">
-                    <div class="card-body register-card-body">
-                    <p style="font-size: 150%;color: red;text-align: center">${messageError}</p>
-                    <p style="font-size: 150%;color: blue;text-align: center">${messageSuccess}</p>
-                    <p class="login-box-msg">Register a new membership</p>
+* {
+  box-sizing: border-box;
+}
 
-                    <form action="${pageContext.request.getContextPath()}/register" modelAttribute="account" id="registerform" method="post" >
-                        <div class="input-group mb-3">
-                            <input type="username" name="username" class="form-control" placeholder="Username">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="input-group mb-3">
-                            <input type="password" name="password1" class="form-control" placeholder="Password">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="password" name="password2" class="form-control" placeholder="Retype password">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" name="fullName" class="form-control" placeholder="Full name">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-user"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Email">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="date" name="birthday" class="form-control" placeholder="Birthday">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" name="address" class="form-control" placeholder="Address">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="number" name="phone" class="form-control" placeholder="Tetephonenumer">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
 
-                            <!-- /.col -->
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                            </div>
-                            <!-- /.col -->
-                        </div>
-                    </form>
-                    <a href="login.html" class="text-center">I already have a membership</a>
-                </div>
-                <!-- /.form-box -->
-            </div><!-- /.card -->
-        </div>
-        <!-- /.register-box -->
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email],input[type=date], input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+form{
+    width: 600px;
+    margin: auto;
+    border: 1px solid gray;
+}
+
+h1{
+    text-align: center;
+}
+</style>
+        <body>
+          
+        
+         <form action="${pageContext.request.getContextPath()}/register" modelAttribute="account" id="registerform" method="post" >
+            <div class="container">
+              <h1>ĐĂNG KÝ</h1>
+              
+
+
+              <label for="username"><b>Username</b></label>
+               <input type="text" name="username" class="form-control" placeholder="Username">
+
+              <label for="password1"><b>Password</b></label>
+              <input type="password" name="password1" class="form-control" placeholder="Password">
+
+              <label for="password2"><b>Repeat Password</b></label>
+              <input type="password" name="password2" class="form-control" placeholder="Retype password">
+              
+               <label for="fullName"><b>Full name</b></label>
+               <input type="text" name="fullName" class="form-control" placeholder="Full name">
+               
+                <label for="email"><b>Email</b></label>
+                 <input type="email" name="email" class="form-control" placeholder="Email">
+                
+                 <label for="birthday"><b>Birthday</b></label>
+                 <input type="date" name="birthday" class="form-control" placeholder="Birthday">
+                 
+                  <label for="address"><b>Địa chỉ</b></label>
+                  <input type="text" name="address" class="form-control" placeholder="Address">
+                  
+                  <label for="phone"><b>Phone</b></label>
+                    <input type="number" name="phone" class="form-control" placeholder="Tetephonenumer">
+       
+              
+
+              <button type="submit" class="registerbtn">Register</button>
+            </div>
+
+            <div class="container signin">
+              <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+            </div>
+          </form>
 
 
         <!-- jQuery -->

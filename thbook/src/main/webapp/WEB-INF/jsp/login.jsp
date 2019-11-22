@@ -27,50 +27,53 @@
             <!-- Google Font: Source Sans Pro -->
             <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
         </head>
-        <body class="hold-transition login-page">
-            <div class="login-box">
-                <div class="login-logo">
-                    <a href="../../index2.html"><b>Admin</b>LTE</a>
-                </div>
-                <!-- /.login-logo -->
-                <div class="card">
-                    <div class="card-body login-card-body">
-                        <p class="login-box-msg">Sign in to start your session</p>
+        
+        
+        	<style>
+		.login-page {
+		  width: 360px;
+		  padding: 8% 0 0;
+		  margin: auto;
+                  height: 100%;
+		}
+		.form {
+		  position: relative;
+		  z-index: 1;
+		  background: #FFFFFF;
+		  max-width: 360px;
+		  margin: 0 auto 100px;
+		  padding: 45px;
+		  text-align: center;
+		  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		}
+		.form input {
+		  font-family: "Roboto", sans-serif;
+		  outline: 0;
+		  background: #f2f2f2;
+		  width: 100%;
+		  border: 0;
+		  margin: 0 0 15px;
+		  padding: 15px;
+		  box-sizing: border-box;
+		  font-size: 14px;
 
-                        <form action="<c:url value="j_spring_security_check"/>" method="post">
-                            <div class="input-group mb-3">
-                                <input type="text" name="username" class="form-control" placeholder="Username">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-envelope"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-group mb-3">
-                                <input type="password" name="password" class="form-control" placeholder="Password">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <!-- /.col -->
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                                </div>
-                                <!-- /.col -->
-                            </div>
-                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"
-                    </form>
-                    <!-- /.social-auth-links -->
-                    <p class="mb-0">
-                        <a href="register" class="text-center">Register a new membership</a>
-                    </p>
+}
+
+	</style>
+        <body class="hold-transition login-page">
+          
+            <div class="login-page">
+	  <div class="form">
+	    <form action="<c:url value="j_spring_security_check"/>" method="post">
+	      <input type="text" name="username"  placeholder="Username">
+	       <input type="password" name="password" placeholder="Password">
+	      <input type="submit" style="background: green; color: white;" />
+              
+              <p>Already have an account? <a href="register.html">Sign up</a>.</p>
+           
+	    </form>
                 </div>
-                <!-- /.login-card-body -->
-            </div>
-        </div>
+           </div>
         <!-- /.login-box -->
 
         <!-- jQuery -->
