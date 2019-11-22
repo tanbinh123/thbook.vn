@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:security="http://www.springframework.org/schema/security"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-4.2.xsd        
+">
+       
+    <security:authentication-manager>
+        <security:authentication-provider ref="customAuthentication" />
+    </security:authentication-manager>
+    
+    <security:http pattern="/favicon.ico" security="none" />
+    <security:http auto-config="true">
+        <security:form-login 
+            login-page="/login"
+            username-parameter="username"
+            password-parameter="password"
+            authentication-failure-url="/login?error=true"
+            login-processing-url="/j_spring_security_check"
+        />
+        
+        <security:csrf disabled="true" />
+        
+        <security:logout 
+            delete-cookies="JSESSIONID"
+            logout-success-url="/home"
+        />
+        
+        <security:intercept-url pattern="/account/**" access="hasRole('ROLE_USER')" />  
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/seller/**" access="hasRole('ROLE_SELLER')" />            
+    </security:http>
+    
+    <bean id="customAuthentication" class="com.mycompany.thbook.security.CustomAuthenticationProvider" />
+</beans>
