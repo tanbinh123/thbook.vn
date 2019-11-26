@@ -32,7 +32,7 @@
                                 <form action="" method="POST" accept-charset="utf-8">
                                     <br>
                                     <br>
-                                    <h3>Thêm sản phẩm</h3>
+                                    <h3>Thêm mới sản phẩm</h3>
                                     <br>
                                     <table border="0" class="table">
                                         <thead>
