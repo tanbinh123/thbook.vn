@@ -43,8 +43,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                  <div class="card-header">
-                                    <button class="btn btn-primary"><a style="color: white" href="../../thbook">Thêm Đơn Hàng</a></button>
+                                <div class="card-header">
+                      
+                                    <button class="btn btn-primary" data-toggle="collapse" data-target="#demo"><a style="color: white">Thêm Đơn Hàng</a></button>
+
+                                    <div id="demo" class="collapse">
+                                        Lorem ipsum dolor text....
+                                    </div>
+                                    
+                                    
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">

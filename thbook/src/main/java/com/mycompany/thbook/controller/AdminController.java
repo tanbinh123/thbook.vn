@@ -7,6 +7,7 @@ import com.mycompany.thbook.entities.OrderEntity;
 import com.mycompany.thbook.entities.ProductEntity;
 import com.mycompany.thbook.entities.enums.OrderStatus;
 import com.mycompany.thbook.entities.enums.Role;
+import com.mycompany.thbook.service.AccountRoleService;
 import com.mycompany.thbook.service.AccountService;
 import com.mycompany.thbook.service.CategoryService;
 import com.mycompany.thbook.service.OrderService;
@@ -37,6 +38,9 @@ public class AdminController {
 
     @Autowired
     private CategoryService categoryService;
+    
+    @Autowired
+    private AccountRoleService accountRoleService;
 
     @RequestMapping(value = {"/admin", "/admin/dashboard"}, method = RequestMethod.GET)
     public String dashboardPage(Model model) {
@@ -88,7 +92,13 @@ public class AdminController {
     
         @RequestMapping(value = {"/admin/filter"}, method = RequestMethod.POST)
         public String filterOrders(Model model, @RequestParam(value = "filter") String filter) {
-        List<OrderEntity> orders = orderService.getOrdersByCtv();
+        List<OrderEntity> orders = new ArrayList<>();
+        List<AccountEntity> accountSeller = accountService.getAccounts();
+            for (AccountEntity accountEntity : accountSeller) {
+                if (accountEntity.getAccountRoles().get(0).getRoles()==Role.ROLE_SELLER){
+                    orders.addAll(orderService.getOrdersByUserName(accountEntity.getUsername()));
+                }           
+            }         
         List<OrderStatus> orderStatus = Arrays.asList(OrderStatus.values());
         model.addAttribute("orderStatus", orderStatus);
         model.addAttribute("orders", orders);
