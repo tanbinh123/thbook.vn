@@ -33,7 +33,9 @@ public class SellerController {
 
     @RequestMapping(value = {"/seller", "/seller/dashboard"}, method = RequestMethod.GET)
     public String dashboardPage(Model model) {
-        return "seller/dashboard";
+        List<ProductEntity> products = productService.getPorducts();
+        model.addAttribute("products", products);
+        return "seller/product-manager";
     }
 
     @RequestMapping(value = {"/seller/order-manager"}, method = RequestMethod.GET)
@@ -45,9 +47,7 @@ public class SellerController {
         model.addAttribute("orders", orders);
         return "seller/order-manager";
     }
-    
-    
-    
+
     
 
     @RequestMapping(value = {"/seller/product-manager"}, method = RequestMethod.GET)

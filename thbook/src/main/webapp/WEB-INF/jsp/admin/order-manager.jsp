@@ -44,13 +44,22 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Table with default features</h3>
+                                    <form action="/thbook/admin/filter" method="POST" >
+                                    <label>LỌC THEO ĐƠN HÀNG :  </label>
+  <select name="filter">
+<!--  <option value="all">Tất Cả</option>-->
+  <option value="ctv">Đơn hàng của cộng tác viên</option>
+<!--  <option value="customer">Đơn hàng của khách</option>-->
+ </select>    
+                                    <input class="btn btn-success" type="submit" value="submit" name="submit">
+                                    </form>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered">
                                         <thead>
                                             <tr>
+                                                <th>Mã Người Đặt</th>
                                                 <th>Mã Đơn Hàng</th>
                                                 <th>Tên Người Mua</th>
                                                 <th>Địa Chỉ</th>
@@ -63,6 +72,7 @@
                                         <tbody>
                                             <c:forEach var="order" items="${orders}" varStatus="status">
                                                 <tr class="clickable" data-toggle="collapse" data-target="#group-of-rows-${order.id}" aria-expanded="false" aria-controls="group-of-rows-${order.id}">
+                                                   <td>${order.username}</td>
                                                     <td>${order.id}&ensp;	
                                                         <button type="button" class="btn btn-primary">Xem Chi Tiết </button>
 

@@ -20,7 +20,13 @@ public interface OrderRepository extends PagingAndSortingRepository<OrderEntity,
     
      @Query(value = "select o from OrderEntity o where o.username = ?1")
      List<OrderEntity> findProductByUserName(String username);
+     
+     
+     @Query(value ="SELECT o FROM OrderEntity o WHERE o.username LIKE CONCAT('%','ctv','%')")
+     List<OrderEntity> getOrdersByCtv();
+
 
     @Query(value = "select o from OrderEntity o where o.orderDate = ?1")
     Page<OrderEntity> findOrderByDate(Date orderDate, Pageable pageable);
+    
 }

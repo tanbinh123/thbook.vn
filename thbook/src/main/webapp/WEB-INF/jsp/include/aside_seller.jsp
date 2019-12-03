@@ -17,7 +17,7 @@
                     <img src="<c:url value="/resources/dist/img/user2-160x160.jpg"></c:url>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">SELLER</a>
             </div>
         </div>
 

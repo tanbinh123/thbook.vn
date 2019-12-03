@@ -51,10 +51,10 @@
                                                 <fmt:formatNumber type = "number" maxFractionDigits  = "3" value = "${orderDetail.total}" /> đ
                                             </td> 
                                             <td class="actions" data-th="">
-                                                <button class="btn btn-success">
-                                                    <a href="/thbook/deteteBookOnCart/${orderDetail.product.id}"><i class="fa fa-trash" aria-hidden="true"></i>
+                                               
+                                                    <a href="/thbook/deteteBookOnCart/${orderDetail.product.id}"><i style="background-color: green; padding: 2px;" class="fa fa-trash" aria-hidden="true"></i>
 </a>
-                                                </button>
+                                           
                                             </td> 
                                         </tr> 
                                     </c:forEach>

@@ -43,8 +43,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">DataTable with default features</h3>
+                                  <div class="card-header">
+                                    <button class="btn btn-primary"><a style="color: white" href="../../thbook">Thêm Đơn Hàng</a></button>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">

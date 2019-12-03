@@ -40,7 +40,9 @@ public class AdminController {
 
     @RequestMapping(value = {"/admin", "/admin/dashboard"}, method = RequestMethod.GET)
     public String dashboardPage(Model model) {
-        return "admin/dashboard";
+        List<ProductEntity> products = productService.getPorducts();
+        model.addAttribute("products", products);
+        return "admin/product-manager";
     }
 
     @RequestMapping(value = {"/admin/account-manager"}, method = RequestMethod.GET)
@@ -83,6 +85,15 @@ public class AdminController {
         model.addAttribute("accounts", accounts);
         return "admin/account-manager";
     }
+    
+        @RequestMapping(value = {"/admin/filter"}, method = RequestMethod.POST)
+        public String filterOrders(Model model, @RequestParam(value = "filter") String filter) {
+        List<OrderEntity> orders = orderService.getOrdersByCtv();
+        List<OrderStatus> orderStatus = Arrays.asList(OrderStatus.values());
+        model.addAttribute("orderStatus", orderStatus);
+        model.addAttribute("orders", orders);
+        return "admin/order-manager";
+    }
 
     @RequestMapping(value = {"/admin/order-manager"}, method = RequestMethod.GET)
     public String orderManagerPage(Model model) {
@@ -92,7 +103,7 @@ public class AdminController {
         model.addAttribute("orders", orders);
         return "admin/order-manager";
     }
-
+    
     @RequestMapping(value = {"/admin/deleteOrder"}, method = RequestMethod.POST)
     public String deleteOrder(Model model, @RequestParam(value = "id") int id) {
         orderService.deleteOrderById(id);
@@ -103,7 +114,7 @@ public class AdminController {
 
     @RequestMapping(value = {"/admin/updateOrder"}, method = RequestMethod.POST)
     public String updateOrder(Model model, @RequestParam(value = "id") int id,
-            @RequestParam(value = "status") OrderStatus status) {
+        @RequestParam(value = "status") OrderStatus status) {
         OrderEntity order = orderService.getOrderById(id);
         order.setStatus(status);
         orderService.saveOrder(order);

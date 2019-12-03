@@ -30,6 +30,10 @@ public class OrderService {
      public List<OrderEntity> getOrdersByUserName(String username) {
         return (List<OrderEntity>) orderRepository.findProductByUserName(username);
     }
+     
+      public List<OrderEntity> getOrdersByCtv() {
+        return (List<OrderEntity>) orderRepository.getOrdersByCtv();
+    }
     
     
     
