@@ -22,7 +22,7 @@
         </div>
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-2">   
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
@@ -36,7 +36,7 @@
                     </a>
                 </li>    
                 <li class="nav-item">
-                    <a href="/thbook/admin/order-manager" class="nav-link">
+                    <a href="/thbook/admin/order-manager" class="nav-link sadsadsad">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
                             Quản Lý Đơn Hàng
