@@ -52,7 +52,7 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>id</th>
+                                                <th>Id</th>
                                                 <th>Ảnh</th>
                                                 <th>Tên</th>
                                                 <th>Giá</th>

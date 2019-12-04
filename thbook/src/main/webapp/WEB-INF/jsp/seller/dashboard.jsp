@@ -64,7 +64,7 @@
                                                 <tr>
                                                     <th>Product</th>
                                                     <th>Price</th>
-                                                    <th>Sales</th>
+                                                    <th>sales</th>
                                                     <th>More</th>
                                                 </tr>
                                             </thead>

@@ -59,7 +59,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Mã Đơn Hàng</th>
-                                                <th>Tên Người Mua</th>
+                                                <th>Tên người mua</th>
                                                 <th>Địa Chỉ</th>
                                                 <th>Ngày Mua</th>
                                                 <th>Trạng Thái</th>
